@@ -1,10 +1,7 @@
 import click
 from pycoingecko import CoinGeckoAPI
-from datetime import datetime, timedelta
 from tabulate import tabulate
 
-import matplotlib.pyplot as plt
-import numpy as np
 
 cg = CoinGeckoAPI()
 
@@ -37,9 +34,6 @@ def history(crypto_currency, currency):
 
     for x in prices:
         values.append(x[1])
-
-    plt.plot(values)
-    plt.show()
 
 
 @cli.command()
