@@ -7,6 +7,7 @@ cg = CoinGeckoAPI()
 
 @click.group()
 def cli():
+    """crypto-connect is a CLI tool to keep track of cryptocurrencies."""
     pass
 
 
