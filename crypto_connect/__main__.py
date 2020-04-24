@@ -35,5 +35,15 @@ def history(crypto_currency, currency):
     plt.show()
 
 
+@cli.command()
+def cryptocurrencies():
+    print(cg.get_coins_list())
+
+
+@cli.command()
+def currencies():
+    print(cg.get_supported_vs_currencies())
+
+
 if __name__ == '__main__':
     cli()
