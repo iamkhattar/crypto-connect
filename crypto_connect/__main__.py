@@ -1,7 +1,8 @@
 import click
 from pycoingecko import CoinGeckoAPI
-import matplotlib.pyplot as plt
-import numpy as np
+from tabulate import tabulate
+
+
 cg = CoinGeckoAPI()
 
 
@@ -15,7 +16,9 @@ def cli():
 @click.argument('crypto_currency', required=1)
 @click.argument('currency', required=1)
 def price(crypto_currency, currency):
-    print(cg.get_price(ids=crypto_currency, vs_currencies=currency))
+    vals = cg.get_price(ids=crypto_currency, vs_currencies=currency)
+    print(tabulate([[crypto_currency, vals[crypto_currency][currency]]],
+                   headers=['Crypto Currency', 'Value in {}'.format(currency)]))
 
 
 @cli.command()
@@ -31,9 +34,6 @@ def history(crypto_currency, currency):
 
     for x in prices:
         values.append(x[1])
-
-    plt.plot(values)
-    plt.show()
 
 
 @cli.command()
