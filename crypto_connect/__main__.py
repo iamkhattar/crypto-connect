@@ -17,11 +17,12 @@ def price(currency, vs_currencies):
 
 
 @cli.command()
-@click.argument('currency')
-def history(currency):
-    """ 30 day history of <currency> """
+@click.argument('crypto_currency', required=1)
+@click.argument('currency', required=1)
+def history(crypto_currency, currency):
+    """ Usage: history <crypto_currency> <currency> """
     hist = cg.get_coin_market_chart_by_id(
-        id=currency, vs_currency="usd", days=30)
+        id=crypto_currency, vs_currency=currency, days=30)
 
     prices = hist["prices"]
 
