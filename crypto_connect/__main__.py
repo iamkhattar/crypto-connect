@@ -3,9 +3,15 @@ from pycoingecko import CoinGeckoAPI
 cg = CoinGeckoAPI()
 
 
-@click.command()
+@click.group()
 def cli():
-    click.echo(cg.get_price(ids='bitcoin', vs_currencies='usd'))
+    pass
+
+
+@cli.command()
+@click.argument('currency')
+def hello(currency):
+    print(currency)
 
 
 if __name__ == '__main__':
