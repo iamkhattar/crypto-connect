@@ -17,7 +17,7 @@ def price(currency):
 @cli.command()
 @click.argument('currency')
 def history(currency):
-    """ Check History of <Currency"""
+    """ History of Currency Price """
     print(currency)
 
 
