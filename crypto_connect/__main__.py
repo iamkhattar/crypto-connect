@@ -10,8 +10,9 @@ def cli():
 
 @cli.command()
 @click.argument('currency', required=1)
-def price(currency):
-    print(currency)
+@click.argument('vs_currencies', required=1)
+def price(currency, vs_currencies):
+    click.echo(cg.get_price(ids=currency, vs_currencies=vs_currencies))
 
 
 @cli.command()
