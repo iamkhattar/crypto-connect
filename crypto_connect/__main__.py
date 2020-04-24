@@ -9,8 +9,15 @@ def cli():
 
 
 @cli.command()
+@click.argument('currency', required=1)
+def price(currency):
+    print(currency)
+
+
+@cli.command()
 @click.argument('currency')
-def hello(currency):
+def history(currency):
+    """ Check History of <Currency"""
     print(currency)
 
 
