@@ -1,12 +1,11 @@
-import sys
 import click
-
+from pycoingecko import CoinGeckoAPI
+cg = CoinGeckoAPI()
 
 
 @click.command()
 def cli():
-    """Example script."""
-    click.echo('Hello World!')
+    click.echo(cg.get_price(ids='bitcoin', vs_currencies='usd'))
 
 
 if __name__ == '__main__':
