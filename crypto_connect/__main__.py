@@ -1,6 +1,8 @@
 import click
 from pycoingecko import CoinGeckoAPI
 from datetime import datetime, timedelta
+from tabulate import tabulate
+
 cg = CoinGeckoAPI()
 
 
@@ -13,7 +15,9 @@ def cli():
 @click.argument('crypto_currency', required=1)
 @click.argument('currency', required=1)
 def price(crypto_currency, currency):
-    print(cg.get_price(ids=crypto_currency, vs_currencies=currency))
+    vals = cg.get_price(ids=crypto_currency, vs_currencies=currency)
+    print(tabulate([[crypto_currency, vals[crypto_currency][currency]]],
+                   headers=['Crypto Currency', 'Value in {}'.format(currency)]))
 
 
 @cli.command()
