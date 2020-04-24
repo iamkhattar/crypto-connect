@@ -5,8 +5,9 @@ setup(
     name='crypto-connect',
     version='1.0.0',
     packages=find_packages(),
+    install_requires=['pycoingecko', 'Click'],
     entry_points={
         'console_scripts': [
-            'crypto-connect = crypto_connect.__main__:main'
+            'crypto-connect = crypto_connect.__main__:cli'
         ]
     })

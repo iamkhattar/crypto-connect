@@ -1,2 +1,3 @@
 .vscode
 /crypto_connect.egg-info/
+/crypto_connect/__pycache__/

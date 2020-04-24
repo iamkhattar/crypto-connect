@@ -1,13 +1,13 @@
 import sys
+import click
 
 
-def main():
-    print('in main')
-    args = sys.argv[1:]
-    print('count of args :: {}'.format(len(args)))
-    for arg in args:
-        print('passed argument :: {}'.format(arg))
+
+@click.command()
+def cli():
+    """Example script."""
+    click.echo('Hello World!')
 
 
 if __name__ == '__main__':
-    main()
+    cli()
