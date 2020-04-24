@@ -3,11 +3,15 @@ from pycoingecko import CoinGeckoAPI
 from datetime import datetime, timedelta
 from tabulate import tabulate
 
+import matplotlib.pyplot as plt
+import numpy as np
+
 cg = CoinGeckoAPI()
 
 
 @click.group()
 def cli():
+    """crypto-connect is a CLI tool to keep track of cryptocurrencies."""
     pass
 
 
@@ -29,9 +33,13 @@ def history(crypto_currency, currency):
         id=crypto_currency, vs_currency=currency, days=30)
 
     prices = hist["prices"]
+    values = []
 
-    for current_price in prices:
-        print(current_price)
+    for x in prices:
+        values.append(x[1])
+
+    plt.plot(values)
+    plt.show()
 
 
 @cli.command()
