@@ -8,7 +8,11 @@ Visit out [Documentation Page](https://iamkhattar.github.io/crypto-connect/#/) t
 
 # Install
 
-How to install it
+Install crypto-connect using the following command:
+
+```bash
+pip install crypto-connect
+```
 
 # Usage
 
