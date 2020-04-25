@@ -1,3 +1,4 @@
 - [Home](README.md)
 - [Quick Start](quickstart.md)
 - [Github](https://github.com/iamkhattar/crypto-connect)
+- [pypi](https://pypi.org/project/crypto-connect/)
