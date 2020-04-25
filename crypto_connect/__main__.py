@@ -74,11 +74,11 @@ def currencies():
     currency_ids = ['btc', 'eth', 'usd', 'cad', 'cny',
                     'eur', 'gbp', 'hkd', 'inr', 'jpy', 'kwd', 'sgd']
 
-    new_table = []
+    table = []
     for i in range(len(currencies)-1):
-        new_table.append([currencies[i], currency_ids[i]])
+        table.append([currencies[i], currency_ids[i]])
 
-    print(tabulate(new_table, headers=['Currency', 'ID']))
+    print(tabulate(table, headers=['Currency', 'ID']))
 
 
 if __name__ == '__main__':
