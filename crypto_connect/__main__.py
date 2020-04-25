@@ -64,7 +64,11 @@ def cryptocurrencies():
 
 @cli.command()
 def currencies():
-    print(cg.get_supported_vs_currencies())
+    values = cg.get_supported_vs_currencies()
+    vals = []
+    for v in values:
+        vals.append([v])
+    print(tabulate(vals, headers=['Supported Currencies']))
 
 
 if __name__ == '__main__':
