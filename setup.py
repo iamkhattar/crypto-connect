@@ -9,7 +9,7 @@ setup(
     description='crypto-connect is a CLI tool to keep track of cryptocurrencies.',
     author='Shivam Khattar < shivamkhattar1@gmail.com > , Khaled Alqallaf < kalqallaf1@outlook.com> , Saeed Khan < saeed786129@hotmail.com >',
     url='https://iamkhattar.github.io/crypto-connect/#/',
-    download_url='',
+    download_url='https://github.com/iamkhattar/crypto-connect/archive/1.0.0.tar.gz',
     keywords=['CLI', 'cryptocurrency', 'crypto currency', 'market trends'],
     install_requires=['pycoingecko', 'Click', 'tabulate'],
     entry_points={
