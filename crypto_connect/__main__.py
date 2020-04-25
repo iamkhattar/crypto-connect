@@ -2,7 +2,6 @@ import click
 from pycoingecko import CoinGeckoAPI
 from tabulate import tabulate
 
-
 cg = CoinGeckoAPI()
 
 
