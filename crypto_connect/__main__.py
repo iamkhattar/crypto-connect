@@ -64,11 +64,20 @@ def cryptocurrencies():
 
 @cli.command()
 def currencies():
-    values = cg.get_supported_vs_currencies()
-    vals = []
-    for v in values:
-        vals.append([v])
-    print(tabulate(vals, headers=['Supported Currencies']))
+    table = []
+    table.append(['Bitcoin', 'btc'])
+    table.append(['Etherium', 'eth'])
+    table.append(['United States Dollar', 'usd'])
+    table.append(['Canadian Dollar', 'cad'])
+    table.append(['Chinese Yuan', 'cny'])
+    table.append(['Euro', 'eur'])
+    table.append(['Great Britain Pound', 'gbp'])
+    table.append(['Hong Kong Dollar', 'hkd'])
+    table.append(['Indian National Rupee', 'inr'])
+    table.append(['Japanese Yen', 'jpy'])
+    table.append(['Kuwaiti Dinar', 'kwd'])
+    table.append(['Singapore Dollar', 'sgd'])
+    print(tabulate(table, headers=['Currency', 'ID']))
 
 
 if __name__ == '__main__':
