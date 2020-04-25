@@ -58,7 +58,6 @@ def history(crypto_currency, currency):
 @cli.command()
 def cryptocurrencies():
     coins_list = cg.get_coins_list()
-    rows = [x.values() for x in coins_list[:30]]
     table = []
     currencies = ['eth', 'btc', 'xrp', 'usdt',
                   'bch', 'bsv', 'ltc', 'eos', 'bnb', 'xtz']
