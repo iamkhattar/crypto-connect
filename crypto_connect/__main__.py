@@ -3,7 +3,6 @@ from pycoingecko import CoinGeckoAPI
 from tabulate import tabulate
 
 
-
 cg = CoinGeckoAPI()
 
 
@@ -38,23 +37,22 @@ def history(crypto_currency, currency):
 
     nValues = []
     for x in values:
-        count=0
+        count = 0
         if count == 9:
-            count =0
-        
+            count = 0
+
         nValues.append(x)
         count = count+1
 
-    days =[]
+    days = []
     for i in range(31):
         days.append(i)
-    
-    table =[]
-    print(len(values))
+
+    table = []
     for i in range(31):
         table.append([days[i], nValues[i]])
-    
-    print(tabulate(table, headers=["Entry","Price in $"]))
+
+    print(tabulate(table, headers=["Entry", "Price in $"]))
 
 
 @cli.command()
