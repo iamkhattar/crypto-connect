@@ -75,7 +75,7 @@ def currencies():
                     'eur', 'gbp', 'hkd', 'inr', 'jpy', 'kwd', 'sgd']
 
     table = []
-    for i in range(len(currencies)-1):
+    for i in range(len(currencies)):
         table.append([currencies[i], currency_ids[i]])
 
     print(tabulate(table, headers=['Currency', 'ID']))
