@@ -59,7 +59,13 @@ def history(crypto_currency, currency):
 def cryptocurrencies():
     coins_list = cg.get_coins_list()
     rows = [x.values() for x in coins_list[:30]]
-    print(tabulate(rows, headers=['Symbol', 'ID', 'Name']))
+    table = []
+    currencies = ['eth', 'btc', 'xrp', 'usdt',
+                  'bch', 'bsv', 'ltc', 'eos', 'bnb', 'xtz']
+    for d in coins_list:
+        if d['symbol'] in currencies:
+            table.append([d['name'], d['symbol']])
+    print(tabulate(table, headers=['Crypto Currency', 'ID']))
 
 
 @cli.command()
