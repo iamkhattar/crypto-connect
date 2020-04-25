@@ -4,7 +4,7 @@ crypto-connect is a CLI tool to keep track of cryptocurrencies.
 
 # Documentation
 
-Visit out [Documentation Page](www.google.com) to view detailed documentation for crypto-connect.
+Visit out [Documentation Page](https://iamkhattar.github.io/crypto-connect/#/) to view detailed documentation for crypto-connect.
 
 # Install
 

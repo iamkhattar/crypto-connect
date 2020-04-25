@@ -59,7 +59,9 @@ def history(crypto_currency, currency):
 
 @cli.command()
 def cryptocurrencies():
-    print(cg.get_coins_list())
+    coins_list = cg.get_coins_list()
+    rows = [x.values() for x in coins_list[:30]]
+    print(tabulate(rows, headers=['Symbol', 'ID', 'Name']))
 
 
 @cli.command()
