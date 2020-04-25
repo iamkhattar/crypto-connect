@@ -2,6 +2,8 @@ import click
 from pycoingecko import CoinGeckoAPI
 from tabulate import tabulate
 
+
+
 cg = CoinGeckoAPI()
 
 
@@ -26,13 +28,33 @@ def price(crypto_currency, currency):
 def history(crypto_currency, currency):
     """ Usage: history <crypto_currency> <currency> """
     hist = cg.get_coin_market_chart_by_id(
-        id=crypto_currency, vs_currency=currency, days=30)
+        id=crypto_currency, vs_currency=currency, days=1)
 
     prices = hist["prices"]
     values = []
 
     for x in prices:
         values.append(x[1])
+
+    nValues = []
+    for x in values:
+        count=0
+        if count == 9:
+            count =0
+        
+        nValues.append(x)
+        count = count+1
+
+    days =[]
+    for i in range(31):
+        days.append(i)
+    
+    table =[]
+    print(len(values))
+    for i in range(31):
+        table.append([days[i], nValues[i]])
+    
+    print(tabulate(table, headers=["Entry","Price in $"]))
 
 
 @cli.command()
