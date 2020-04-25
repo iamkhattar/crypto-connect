@@ -69,20 +69,16 @@ def cryptocurrencies():
 
 @cli.command()
 def currencies():
-    table = []
-    table.append(['Bitcoin', 'btc'])
-    table.append(['Etherium', 'eth'])
-    table.append(['United States Dollar', 'usd'])
-    table.append(['Canadian Dollar', 'cad'])
-    table.append(['Chinese Yuan', 'cny'])
-    table.append(['Euro', 'eur'])
-    table.append(['Great Britain Pound', 'gbp'])
-    table.append(['Hong Kong Dollar', 'hkd'])
-    table.append(['Indian National Rupee', 'inr'])
-    table.append(['Japanese Yen', 'jpy'])
-    table.append(['Kuwaiti Dinar', 'kwd'])
-    table.append(['Singapore Dollar', 'sgd'])
-    print(tabulate(table, headers=['Currency', 'ID']))
+    currencies = ['Bitcoin', 'Etherium', 'United States Dollars', 'Canadian Dollar', 'Chinese Yuan', 'Euro',
+                  'Pound Sterling', 'Hong Kong Dollar', 'Indian National Rupee', 'Japanese Yen', 'Kuwaiti Dinar', 'Singapore Dollar']
+    currency_ids = ['btc', 'eth', 'usd', 'cad', 'cny',
+                    'eur', 'gbp', 'hkd', 'inr', 'jpy', 'kwd', 'sgd']
+
+    new_table = []
+    for i in range(len(currencies)-1):
+        new_table.append([currencies[i], currency_ids[i]])
+
+    print(tabulate(new_table, headers=['Currency', 'ID']))
 
 
 if __name__ == '__main__':
