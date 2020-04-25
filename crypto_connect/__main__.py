@@ -54,7 +54,7 @@ def history(crypto_currency, currency):
     for i in range(31):
         table.append([days[i], nValues[i]])
     
-    print(tabulate(table, headers=["Entry","BTC Price in $"]))
+    print(tabulate(table, headers=["Entry","Price in $"]))
 
 
 @cli.command()
